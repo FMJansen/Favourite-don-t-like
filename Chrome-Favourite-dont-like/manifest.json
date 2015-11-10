@@ -1,0 +1,27 @@
+{
+  "name": "Favourite, don’t like",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Replace the heart with a star",
+  "homepage_url": "http://fmjansen.nl",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitter.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "*.png"
+  ]
+}
