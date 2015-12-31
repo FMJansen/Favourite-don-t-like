@@ -1,24 +1,30 @@
-// chrome.extension.sendMessage({}, function(response) {
-// 	var readyStateCheckInterval = setInterval(function() {
-// 	if (document.readyState === "complete") {
-// 		clearInterval(readyStateCheckInterval);
-//
 if (window.top === window) {
 	console.log('stars');
 		var imgURL = safari.extension.baseURI + 'web_star_animation.png';
 
-		$('.HeartAnimation').each(function() {
-			$(this).css('background-image', 'url(' + imgURL + ')') ;
-		});
+		var styleTag = '<style type="text/css">';
+		styleTag += '.HeartAnimation { background-image: url(' + imgURL + '); }'
+		styleTag += '.ProfileTweet-action--favorite \
+		.ProfileTweet-actionButton:hover, .ProfileTweet-action--favorite \
+		.ProfileTweet-actionButton:focus, .ProfileTweet-action--favorite \
+		.ProfileTweet-actionCount:hover, .ProfileTweet-action--favorite \
+		.ProfileTweet-actionCount:focus, .favorited \
+		.ProfileTweet-action--favorite .Icon--heart, .favorited \
+		.ProfileTweet-action--favorite .ProfileTweet-actionButtonUndo {\
+			color: #FAB41E; \
+		}';
+		styleTag += '</style>';
 
-		setTimeout(function() {
-			$('.HeartAnimation').each(function() {
-				$(this).parent().parent().attr('data-original-title', 'Favourite');
+		$(styleTag).appendTo("head");
+
+		setInterval(function() {
+			$('[title="Like"], [data-original-title="Like"]').each(function() {
+				$(this).attr('data-original-title', 'Favourite')
+					.attr('title', 'Favourite');
 			});
-			console.log('stars');
-		}, 1000);
+			$('[title="Undo like"], [data-original-title="Undo like"]').each(function() {
+				$(this).attr('data-original-title', 'Favourite')
+					.attr('title', 'Unfavourite');
+			});
+		}, 500);
 }
-
-// 	}
-// 	}, 10);
-// });
