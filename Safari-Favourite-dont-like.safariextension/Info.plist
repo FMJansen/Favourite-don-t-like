@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Author</key>
+	<string>Floris Jansen</string>
 	<key>Builder Version</key>
 	<string>11601.3.9</string>
 	<key>CFBundleDisplayName</key>
@@ -29,6 +31,8 @@
 			<string>*://*.twitter.com/*</string>
 		</array>
 	</dict>
+	<key>Description</key>
+	<string>Likes are dumb, favourites are awesome. Replace Twitter’s new heart with its old star.</string>
 	<key>DeveloperIdentifier</key>
 	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
@@ -43,5 +47,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Website</key>
+	<string>http://fmjansen.nl</string>
 </dict>
 </plist>
